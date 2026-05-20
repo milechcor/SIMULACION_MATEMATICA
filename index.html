@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Matemáticas que Resuelven Problemas</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:linear-gradient(
+135deg,
+#aa4bc0,
+#8f7fd8,
+#93b7e6,
+#89d6d6
+);
+
+padding:30px;
+color:#334155;
+
+}
+
+.container{
+
+max-width:1200px;
+margin:auto;
+
+}
+
+header{
+
+background:rgb(255, 255, 255);
+padding:40px;
+border-radius:25px;
+text-align:center;
+
+box-shadow:
+0 10px 20px rgba(0,0,0,.1);
+
+margin-bottom:30px;
+
+}
+
+header h1{
+
+font-size:2.8rem;
+margin-bottom:15px;
+color:#330f6d;
+
+}
+
+header p{
+
+color:#64748B;
+line-height:1.8;
+
+}
+
+
+.info-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:20px;
+margin-bottom:40px;
+
+}
+
+.info-card{
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.08);
+
+transition:.4s;
+
+}
+
+.info-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.info-card h2{
+
+margin-bottom:15px;
+color:#3f00ac;
+
+}
+
+.info-card p{
+
+line-height:1.8;
+
+}
+
+
+.section-title{
+
+text-align:center;
+margin:40px;
+font-size:2rem;
+color:#120e5f;
+
+}
+
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(350px,1fr));
+
+gap:25px;
+
+}
+
+.card{
+
+background:rgb(255, 255, 255);
+padding:25px;
+border-radius:20px;
+
+box-shadow:
+0 10px 20px rgba(0,0,0,.1);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card h2{
+
+margin-bottom:15px;
+color:#2563EB;
+
+}
+
+.card p{
+
+line-height:1.8;
+margin-bottom:15px;
+
+}
+
+label{
+
+display:block;
+margin-bottom:8px;
+font-weight:bold;
+
+}
+
+input{
+
+width:100%;
+padding:14px;
+
+border-radius:12px;
+
+border:2px solid #CBD5E1;
+
+font-size:15px;
+
+transition:.4s;
+
+outline:none;
+
+}
+
+
+/* Fibonacci */
+
+.fibo-input:focus{
+
+border-color:#6BA368;
+
+box-shadow:
+0 0 15px rgba(107,163,104,.4);
+
+}
+
+
+/* Primos */
+
+.primo-input:focus{
+
+border-color:#93C5FD;
+
+box-shadow:
+0 0 15px rgba(147,197,253,.7);
+
+}
+
+
+/* Combinado */
+
+.combinado-input:focus{
+
+border-color:#C4B5FD;
+
+box-shadow:
+0 0 15px rgba(196,181,253,.7);
+
+}
+
+
+button{
+
+margin-top:20px;
+width:100%;
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:15px;
+font-weight:bold;
+
+background:
+linear-gradient(
+45deg,
+#A78BFA,
+#60A5FA
+);
+
+color:rgb(253, 251, 223);
+
+transition:.4s;
+
+}
+
+button:hover{
+
+transform:scale(1.03);
+
+}
+
+.resultado{
+
+display:none;
+
+margin-top:20px;
+
+padding:15px;
+
+border-radius:15px;
+
+background:#FFF7ED;
+
+border-left:6px solid #FB923C;
+
+line-height:1.8;
+
+}
+
+
+.conclusion{
+
+margin-top:40px;
+
+background:rgb(255, 255, 255);
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 20px rgba(0,0,0,.1);
+
+line-height:1.8;
+
+}
+
+
+footer{
+
+margin-top:30px;
+text-align:center;
+
+color:#64748B;
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>
+Matemáticas que Resuelven Problemas
+</h1>
+
+<p>
+
+Aplicación de la Serie Fibonacci y Números Primos
+en situaciones reales.
+
+</p>
+
+</header>
+
+
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<h2>¿Qué es Fibonacci?</h2>
+
+<p>
+
+La serie Fibonacci es una secuencia matemática donde cada número es la suma de los dos anteriores:
+
+1,1,2,3,5,8,13...
+
+</p>
+
+<br>
+
+<p>
+
+Importancia:
+
+La secuencia aparece en crecimiento de plantas, economía, naturaleza, arquitectura y análisis financiero.
+
+</p>
+
+</div>
+
+
+
+<div class="info-card">
+
+<h2>¿Qué son los números primos?</h2>
+
+<p>
+
+Son números que solamente pueden dividirse entre 1 y sí mismos.
+
+</p>
+
+<br>
+
+<p>
+
+Importancia:
+
+Son fundamentales para proteger datos y crear sistemas de seguridad informática.
+
+</p>
+
+</div>
+
+
+
+
+<div class="info-card">
+
+<h2>Aplicación en la vida real</h2>
+
+<p>
+
+Las matemáticas permiten modelar problemas reales mediante algoritmos y patrones.
+
+Se usan para crecimiento, seguridad, análisis y tecnología.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<h1 class="section-title">
+
+Simuladores Interactivos
+
+</h1>
+
+
+
+
+<div class="grid">
+
+
+
+<div class="card">
+
+<h2>
+💰 Ahorro progresivo con Fibonacci
+</h2>
+
+<p>
+
+Una persona desea ahorrar dinero durante varios meses.
+
+En lugar de ahorrar la misma cantidad cada mes, incrementa el ahorro usando el patrón Fibonacci.
+
+Este modelo ayuda a comprender cómo pequeños cambios pueden producir grandes resultados con el tiempo.
+
+</p>
+
+<label>
+
+Cantidad de meses
+
+</label>
+
+<input
+type="number"
+id="meses"
+class="fibo-input"
+value="6"
+>
+
+<button onclick="ahorro()">
+
+Calcular ahorro
+
+</button>
+
+<div
+id="resultado1"
+class="resultado">
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>
+
+🔒 Seguridad con números primos
+
+</h2>
+
+<p>
+
+Los números primos tienen aplicaciones importantes en protección de datos y generación de claves digitales.
+
+Este simulador analiza si un número puede considerarse especial por ser primo.
+
+</p>
+
+<label>
+
+Ingrese código
+
+</label>
+
+<input
+type="number"
+id="numeroPrimo"
+class="primo-input"
+>
+
+<button onclick="verificar()">
+
+Verificar código
+
+</button>
+
+<div
+id="resultado2"
+class="resultado">
+
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+<h2>
+
+🧠 Fibonacci + Primos
+
+</h2>
+
+<p>
+
+Se genera una secuencia Fibonacci y luego se identifican cuáles valores también son primos.
+
+Este análisis permite encontrar patrones matemáticos utilizados en informática y ciencia.
+
+</p>
+
+<label>
+
+Cantidad de términos
+
+</label>
+
+<input
+type="number"
+id="cantidad"
+class="combinado-input"
+value="10"
+>
+
+<button onclick="combinar()">
+
+Generar análisis
+
+</button>
+
+<div
+id="resultado3"
+class="resultado">
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<div class="conclusion">
+
+<h2>Conclusión</h2>
+
+<br>
+
+<p>
+
+Las matemáticas permiten representar y resolver situaciones reales mediante modelos y algoritmos.
+
+La serie Fibonacci ayuda a comprender patrones de crecimiento y los números primos son esenciales para seguridad informática.
+
+Su aplicación permite solucionar problemas en tecnología, economía y ciencia.
+
+</p>
+
+<br>
+
+<h3>Repositorio GitHub:</h3>
+
+<p>Pegar enlace aquí</p>
+
+<br>
+
+<h3>GitHub Pages:</h3>
+
+<p>Pegar enlace aquí</p>
+
+</div>
+
+<footer>
+
+Proyecto desarrollado con HTML5 + CSS + JavaScript
+
+</footer>
+
+</div>
+
+
+<script>
+
+function esPrimo(numero){
+
+if(numero<=1){
+
+return false;
+
+}
+
+for(let i=2;i<numero;i++){
+
+if(numero%i==0){
+
+return false;
+
+}
+
+}
+
+return true;
+
+}
+
+
+
+function ahorro(){
+
+let meses=
+parseInt(
+document.getElementById(
+"meses"
+).value
+);
+
+let a=0;
+let b=1;
+let c;
+
+let serie="";
+let total=0;
+
+for(let i=1;i<=meses;i++){
+
+serie+=b+" ";
+total+=b;
+
+c=a+b;
+a=b;
+b=c;
+
+}
+
+let resultado=
+document.getElementById(
+"resultado1"
+);
+
+resultado.style.display="block";
+
+resultado.innerHTML=
+
+`
+Secuencia: ${serie}
+
+<br><br>
+
+Total ahorrado:
+Bs ${total}
+
+`;
+
+}
+
+
+
+function verificar(){
+
+let numero=
+parseInt(
+document.getElementById(
+"numeroPrimo"
+).value
+);
+
+let resultado=
+document.getElementById(
+"resultado2"
+);
+
+resultado.style.display="block";
+
+if(esPrimo(numero)){
+
+resultado.innerHTML=
+`El número ${numero} es primo ✅`;
+
+}
+
+else{
+
+resultado.innerHTML=
+`El número ${numero} no es primo ❌`;
+
+}
+
+}
+
+
+
+function combinar(){
+
+let cantidad=
+parseInt(
+document.getElementById(
+"cantidad"
+).value
+);
+
+let a=0;
+let b=1;
+let c;
+
+let fibonacci="";
+let primos="";
+
+for(let i=1;i<=cantidad;i++){
+
+fibonacci+=b+" ";
+
+if(esPrimo(b)){
+
+primos+=b+" ";
+
+}
+
+c=a+b;
+a=b;
+b=c;
+
+}
+
+let resultado=
+document.getElementById(
+"resultado3"
+);
+
+resultado.style.display="block";
+
+resultado.innerHTML=
+
+`
+
+Fibonacci:
+
+<br><br>
+
+${fibonacci}
+
+<br><br>
+
+Primos encontrados:
+
+<br><br>
+
+${primos}
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
